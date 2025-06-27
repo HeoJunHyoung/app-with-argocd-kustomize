@@ -1,0 +1,20 @@
+resources:
+- ../../base
+
+images:
+  - name: nginx
+    newName: nginx
+    newTag: latest
+  
+patches:
+- path: prod-patch.yaml
+
+namespace: prod
+namePrefix: prod-
+
+
+# configMapGenerator
+configMapGenerator:
+- name: env-vars
+  envs:
+    - prod.env

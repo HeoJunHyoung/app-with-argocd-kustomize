@@ -22,9 +22,9 @@ spec:
             - name: MYSQL_ROOT_PASSWORD
               value: k8s12345
           volumeMounts:
-            - mountPath: 
-              name: 
+            - mountPath: /var/lib/mysql
+              name: mysql-storage
       volumes:
-        - name: 
+        - name: mysql-storage
           persistentVolumeClaim:
-            claimName: 
+            claimName: db-pvc
